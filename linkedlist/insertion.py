@@ -23,6 +23,15 @@ To insert a node after a given node:
    -shift next of the given node to new node
 """
 
+"""
+To insert a node  at the end of the linkedlist
+1. Check if the linkedlist is empty
+   -if the linkedlist is empty then make the head of the linkedlist as the new node.
+   -Otherwise traverse till the last node of the linkedlist and change the next pointer of 
+    the last node to the new node.
+    -Make the next pointer of the new node to null
+"""
+
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -44,7 +53,16 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = givenNode.next
         givenNode.next = new_node
-
+    
+    def addEnd(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
 
 
     def printList(self):
@@ -57,6 +75,6 @@ ll = LinkedList()
 ll.addFront(10)
 ll.addFront(20)
 ll.addFront(30)
-
+ll.addEnd(300)
 ll.addAfterNode(ll.head.next, 120)
 ll.printList()
