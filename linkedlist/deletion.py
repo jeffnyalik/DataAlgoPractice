@@ -27,6 +27,20 @@ class LinkedList:
             temp = self.head
             self.head = self.head.next ## move head to next of head
             temp = None ## Free up the memory
+        
+    def deleteLastNode(self):
+        if self.head != None:
+            if self.head.next == None:
+                self.head = None
+            else:
+                temp = self.head
+                while temp.next.next != None:
+                    temp = temp.next
+                lastNode = temp.next
+                temp.next = None
+                lastNode = None
+                
+
 
     
     def printList(self):
@@ -41,5 +55,6 @@ ll.addFront(20)
 ll.addFront(30)
 ll.addFront(50)
 
-ll.popFront()
+# ll.popFront()
+ll.deleteLastNode()
 ll.printList()
