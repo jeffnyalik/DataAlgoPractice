@@ -61,7 +61,13 @@ class LinkedList:
                 print("The node is already null")
 
 
-            
+    def deleteAllNodes(self):
+        while self.head !=None:
+            temp = self.head
+            self.head = self.head.next
+            temp = None
+        
+
 
 
     
@@ -79,5 +85,6 @@ ll.addFront(50)
 
 # ll.popFront()
 # ll.deleteLastNode()
-ll.deleteNodeAtPosition(2)
+# ll.deleteNodeAtPosition(2)
+ll.deleteAllNodes()
 ll.printList()
