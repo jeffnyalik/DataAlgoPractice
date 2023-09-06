@@ -39,7 +39,29 @@ class LinkedList:
                 lastNode = temp.next
                 temp.next = None
                 lastNode = None
-                
+    
+    def deleteNodeAtPosition(self, position):
+        if position < 1:
+            print("Position cannot be less than 1")
+        elif(position == 1 and self.head != None):
+            nodeDelete = self.head
+            self.head = self.head.next
+            nodeDelete = None
+
+        else:
+            temp = self.head
+            for i in range(1, position - 1):
+                if temp != None:
+                    temp = temp.next
+            if temp != None  and  temp.next !=None:
+                nodeDelete = temp.next
+                temp.next = temp.next.next
+                nodeDelete = None
+            else:
+                print("The node is already null")
+
+
+            
 
 
     
@@ -56,5 +78,6 @@ ll.addFront(30)
 ll.addFront(50)
 
 # ll.popFront()
-ll.deleteLastNode()
+# ll.deleteLastNode()
+ll.deleteNodeAtPosition(2)
 ll.printList()
