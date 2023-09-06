@@ -88,17 +88,17 @@ class LinkedList:
             temp = self.head
             self.head = self.head.next
             temp = None
-        if self.head != None:
-            evenNode = self.head
-            oddNode = self.head.next
+            if self.head != None:
+                evenNode = self.head
+                oddNode = self.head.next
 
-        while evenNode !=None and oddNode !=None:
-            evenNode.next = oddNode.next
-            oddnode = None
+                while evenNode !=None and oddNode !=None:
+                    evenNode.next = oddNode.next
+                    oddnode = None
 
-            evenNode = evenNode.next
-            if evenNode != None:
-                oddNode = evenNode.next
+                    evenNode = evenNode.next
+                    if evenNode != None:
+                        oddNode = evenNode.next
 
     def printList(self):
         temp = self.head
@@ -113,6 +113,7 @@ ll.addFront(30)
 ll.addFront(50)
 ll.addFront(40)
 ll.addFront(60)
+ll.addFront(9)
 
 # ll.popFront()
 # ll.deleteLastNode()
