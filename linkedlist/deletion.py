@@ -66,11 +66,21 @@ class LinkedList:
             temp = self.head
             self.head = self.head.next
             temp = None
-        
-
-
-
     
+    def deleteEvenNode(self):
+        if self.head != None:
+            oddNode = self.head
+            evenNode = self.head.next
+        
+        while oddNode !=None and evenNode !=None:
+            oddNode.next = evenNode.next
+            evenNode = None
+
+            oddNode = oddNode.next
+            if oddNode != None:
+                evenNode = oddNode.next
+
+
     def printList(self):
         temp = self.head
         while temp is not None:
@@ -82,9 +92,12 @@ ll.addFront(10)
 ll.addFront(20)
 ll.addFront(30)
 ll.addFront(50)
+ll.addFront(40)
+ll.addFront(60)
 
 # ll.popFront()
 # ll.deleteLastNode()
 # ll.deleteNodeAtPosition(2)
-ll.deleteAllNodes()
+# ll.deleteAllNodes()
+ll.deleteEvenNode()
 ll.printList()
